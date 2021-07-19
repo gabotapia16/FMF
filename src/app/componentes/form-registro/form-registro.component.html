@@ -1,0 +1,21 @@
+<div class="container">
+  <ng-wizard [config]="config" (stepChanged)="stepChanged($event)">
+
+    <ng-wizard-step [title]="'Registro'" [description]="'Paso 1'" [canEnter]="isValidTypeBoolean"
+      [canExit]="isValidFunctionReturnsBoolean.bind(this)">
+      <app-formulario></app-formulario>
+    </ng-wizard-step>
+
+    <ng-wizard-step [title]="'Vista previa'" [description]="'Paso 2'" >
+      <div id="">
+        <app-gafete></app-gafete>
+      </div>
+      
+    </ng-wizard-step>
+
+    <ng-wizard-step [title]="'Descargar PDF'" [description]="'Paso 3'"
+      [canEnter]="isValidFunctionReturnsObservable.bind(this)" [canExit]="isValidFunctionReturnsBoolean.bind(this)">
+      <app-visualizar-pdf></app-visualizar-pdf>
+    </ng-wizard-step>
+  </ng-wizard>
+</div>

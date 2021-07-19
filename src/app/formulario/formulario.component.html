@@ -1,0 +1,83 @@
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <div class="card">
+                <h5 class="text-center mb-4">Registro de miembros</h5>
+                <form class="form-card" [formGroup]="form" >
+                    <div class="row justify-content-between text-left">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="">Nombre(s): {{nombre}}</label>
+                                <input type="text" formControlName="nombre"  class="form-control"  aria-describedby="" placeholder="Ingresa texto">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="">Apellido paterno:</label>
+                                <input type="text" formControlName="apellidoPaterno" class="form-control"  aria-describedby="" placeholder="Ingresa texto">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="">Apellido materno:</label>
+                                <input type="text" formControlName="apellidoMaterno" class="form-control"  aria-describedby="" placeholder="Ingresa texto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Fecha de nacimiento:</label>
+                                <input type="date" formControlName="fechaNacimiento" class="form-control"  aria-describedby="" placeholder="Ingresa texto">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Género:</label>
+                                <select formControlName="genero" class="form-control" name=""  id="select_genero">
+                                    <option *ngFor ="let genero of listaGeneros" value="">{{genero.nombre}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Nacionalidad:</label>
+                                <select formControlName="nacionalidad" class="form-control" name=""  >
+                                    <option *ngFor ="let nacionalidad of listaNacionalidades" value="">{{nacionalidad.nombre}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Club de fútbol:</label>
+                                <select class="form-control" formControlName="club" name=""  >
+                                    <option *ngFor ="let club of listaClubes" value="">{{club.nombre}}</option>
+                                </select>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">RFC:</label>
+                                <input type="text" formControlName="rfc" class="form-control"  aria-describedby="" placeholder="Ingresa texto">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Ocupación:</label>
+                                <input type="text" formControlName="ocupacion" class="form-control"  aria-describedby="" placeholder="Ingresa texto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="submit">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
